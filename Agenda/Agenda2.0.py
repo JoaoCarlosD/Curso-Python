@@ -1,6 +1,11 @@
 from tkinter import *
 import os
 
+pastaApp = os.path.dirname(__file__)
+
+def novoContato():
+    exec(open(pastaApp+"\\NovoContato.novoContato").read(),{'x':10})
+
 app = Tk()
 app.title("CFB Cursos")
 app.geometry("500x300")
@@ -11,7 +16,7 @@ def semComando():
 
 barradeMenus = Menu(app)
 menuContatos = Menu(barradeMenus,tearoff=0)
-menuContatos.add_command(label="Novo",command=semComando)
+menuContatos.add_command(label="Novo",command=novoContato)
 menuContatos.add_command(label="Pesquisar",command=semComando)
 menuContatos.add_command(label="Deletar",command=semComando)
 menuContatos.add_separator()
